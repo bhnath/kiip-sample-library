@@ -6,6 +6,9 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+/**
+ * Generated POJO for JSON data from API.
+ */
 public class HackerNewsItem {
 
     @SerializedName("by")

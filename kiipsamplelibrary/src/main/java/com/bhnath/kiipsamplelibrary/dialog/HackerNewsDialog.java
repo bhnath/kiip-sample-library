@@ -17,6 +17,9 @@ import com.bhnath.kiipsamplelibrary.model.HackerNewsItem;
 
 import java.util.List;
 
+/**
+ * AlertDialog to display ListView of HackerNewsItem's.
+ */
 public class HackerNewsDialog extends DialogFragment {
     private HackerNewsListAdapter adapter;
     private List<HackerNewsItem> list;

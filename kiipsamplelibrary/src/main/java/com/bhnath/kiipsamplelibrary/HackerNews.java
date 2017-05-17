@@ -15,6 +15,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Entry class for library.
+ */
 public class HackerNews {
 
     private static final int MAX_STORIES = 20;
@@ -23,6 +26,10 @@ public class HackerNews {
     private Activity activity;
     private List<HackerNewsItem> list;
 
+    /**
+     * Initialize the library by fetching the top 20 hacker news articles.
+     * @param context - application context
+     */
     public void initSDK(Context context) {
         activity = (Activity) context;
         list = new ArrayList<>();
@@ -41,6 +48,7 @@ public class HackerNews {
                             HackerNewsItem item = response.body();
                             list.add(item);
 
+                            // Load is only complete once all stories have loaded.
                             if (j == MAX_STORIES - 1) {
                                 isLoadComplete = true;
                             }
@@ -61,6 +69,9 @@ public class HackerNews {
         });
     }
 
+    /**
+     * Display dialog once data load is complete.
+     */
     public void showHackerNews() {
         if(!isLoadComplete) {
             Toast.makeText(activity, "Connection not ready yet.", Toast.LENGTH_SHORT).show();

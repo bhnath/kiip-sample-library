@@ -12,6 +12,7 @@ import retrofit2.http.Path;
 
 /**
  * Wrapper for https://github.com/HackerNews/API
+ * Uses Retrofit interfaces for ease of grabbing JSON from the API.
  */
 
 public class HackerNewsApi {

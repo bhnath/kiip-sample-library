@@ -12,6 +12,9 @@ import com.bhnath.kiipsamplelibrary.model.HackerNewsItem;
 
 import java.util.List;
 
+/**
+ * List Adapter for marshalling UI data from model class.
+ */
 public class HackerNewsListAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
@@ -53,6 +56,7 @@ public class HackerNewsListAdapter extends BaseAdapter {
         author.setText(item.getBy());
         score.setText(item.getScore().toString());
 
+        // Get time in 'hours ago'
         Long currentTime = System.currentTimeMillis() / 1000;
         Long diffTime = Math.abs(currentTime - item.getTime()) / 3600;
 
